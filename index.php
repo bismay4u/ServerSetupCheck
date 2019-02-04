@@ -84,7 +84,7 @@ function sysCheckPrint($msg1,$msg2) {
 				echo "<p align=center style='color:#444;'>{$m}</p>";
 			}
 		} else {
-			echo "<h3 align=center style='color:#444;'>Error : {$msg2}</h3>";
+			echo "<h3 align=center style='color:#444;'>{$msg2}</h3>";
 		}
 	}
 	exit();
