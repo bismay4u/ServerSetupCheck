@@ -65,7 +65,7 @@ if(php_sapi_name() == 'cli' ) {
 
 function sysCheckPrint($msg1,$msg2) {
 	$version = "".floor(PHP_VERSION_ID / 10000).".".floor((PHP_VERSION_ID % 10000)/100).".".(PHP_VERSION_ID % 100);
-	
+	$path = __DIR__;
 	$isCLI = (php_sapi_name() == 'cli' );
 	if($isCLI) {
 		echo "\n";
@@ -89,7 +89,7 @@ function sysCheckPrint($msg1,$msg2) {
 			echo "<h3 align=center style='color:#444;'>{$msg2}</h3>";
 		}
 	}
-	echo "\n<hr><div align=center>Found PHP : {$version}</div>";
+	echo "\n<hr><div align=center>Found PHP : {$version} @ {$path}</div>";
 	exit();
 }
 
