@@ -16,6 +16,15 @@ if(PHP_VERSION_ID < 50600) {
 	sysCheckPrint("PHP version 5.6 or above is required to run Logiks 4.0.","Please upgrade to continue.");
 }
 
+if(isset($_REQUEST['mode'])) {
+        switch(strtolower($_REQUEST['mode'])) {
+                case "phpinfo":
+                        phpinfo();
+                        exit();
+                        break;
+        }
+}
+
 //Check some important extensions.
 $checkExtensions=array(
 		"cURL PHP Extension is required"=>"func:curl_init",
@@ -90,6 +99,7 @@ function sysCheckPrint($msg1,$msg2) {
 		}
 	}
 	echo "\n<hr><div align=center>Found PHP : {$version} @ {$path}</div>";
+	echo "\n<div align=center><a href='?mode=phpinfo'>PHPInfo</a></div>";
 	exit();
 }
 
